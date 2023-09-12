@@ -1,0 +1,38 @@
+classe Forma:
+    funcao __init__(self):
+        # Construtor padrão da classe Forma
+        self.tipo = "forma"  # Tipo genérico de forma
+classe Circulo(Forma):
+    funcao __init__(self, raio):
+        # Construtor da classe Circulo, herda de Forma
+        super().__init__()
+        self.tipo = "circulo"
+        self.raio = raio
+classe Quadrado(Forma):
+    funcao __init__(self, lado):
+        # Construtor da classe Quadrado, herda de Forma
+        super().__init__()
+        self.tipo = "quadrado"
+        self.lado = lado
+
+classe Triangulo(Forma):
+    funcao __init__(self, lado):
+        # Construtor da classe Triangulo, herda de Forma
+        super().__init__()
+        self.tipo = "triangulo"
+        self.lado = lado
+funcao criar_universo():
+    universo = ListaVazia()  # Cria uma lista vazia para armazenar as formas
+    retorna universo
+
+funcao adicionar_forma(universo, forma):
+    universo.adicionar(forma)  # Adiciona a forma à lista do universo
+funcao desenhar_formas(universo):
+    para cada forma em universo:
+        se forma.tipo == "circulo":
+            desenhar_circulo(forma.raio)
+        senao se forma.tipo == "quadrado":
+            desenhar_quadrado(forma.lado)
+        senao se forma.tipo == "triangulo":
+            desenhar_triangulo(forma.lado)
+        fim se
