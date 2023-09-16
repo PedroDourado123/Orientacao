@@ -1,0 +1,63 @@
+# Define as classes Forma, Circulo, Quadrado e Triangulo
+
+class Forma:
+    def __init__(self):
+        # Construtor padrão da classe Forma
+        self.tipo = "forma"  # Tipo genérico de forma
+
+class Circulo(Forma):
+    def __init__(self, raio):
+        # Construtor da classe Circulo, herda de Forma
+        super().__init__()
+        self.tipo = "circulo"
+        self.raio = raio
+
+class Quadrado(Forma):
+    def __init__(self, lado):
+        # Construtor da classe Quadrado, herda de Forma
+        super().__init__()
+        self.tipo = "quadrado"
+        self.lado = lado
+
+class Triangulo(Forma):
+    def __init__(self, lado):
+        # Construtor da classe Triangulo, herda de Forma
+        super().__init__()
+        self.tipo = "triangulo"
+        self.lado = lado
+
+# Define funções para criar o universo, adicionar formas e desenhar formas
+
+def criar_universo():
+    universo = []  # Cria uma lista vazia para armazenar as formas
+    return universo
+
+def adicionar_forma(universo, forma):
+    universo.append(forma)  # Adiciona a forma à lista do universo
+
+def desenhar_formas(universo):
+    for forma in universo:
+        if forma.tipo == "circulo":
+            print(f"Desenhando círculo com raio {forma.raio}")
+        elif forma.tipo == "quadrado":
+            print(f"Desenhando quadrado com lado {forma.lado}")
+        elif forma.tipo == "triangulo":
+            print(f"Desenhando triângulo com lado {forma.lado}")
+
+# Função principal (main)
+
+def main():
+    # Crie o universo e adicione algumas formas
+    universo = criar_universo()
+    circulo1 = Circulo(5)
+    quadrado1 = Quadrado(4)
+    triangulo1 = Triangulo(3)
+    adicionar_forma(universo, circulo1)
+    adicionar_forma(universo, quadrado1)
+    adicionar_forma(universo, triangulo1)
+
+    # Desenhe as formas no universo
+    desenhar_formas(universo)
+
+if __name__ == "__main__":
+    main()
